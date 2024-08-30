@@ -97,24 +97,20 @@ function sendQuickReplies(quickReplies) {
 
             var data={
                 json: {
-                      "text": "Please select time slot for your preferred date:",
+                      "text": yourBusinessName,
                       "type": "vertical",
                       "elements": [
                         {
-                          "type": "map",
-                          "lo": "yourLongitude",
-                          "la": "yourLatitude",
-                          "tooltip": "Map",
-                          "click": {
-                            "actions": [
-                              {
-                                "type": "navigate",
-                                "name": "navigate",
-                                "lo": "yourLongitude",
-                                "la": "yourLatitude"
-                              }
-                            ]
-                          }
+                            "type": "button",
+                            "title": "Test Button",
+                            "click": {
+                              "actions": [
+                                {
+                                  "type": "publishText",
+                                  "text": "Button 1 was clicked"
+                                }
+                              ]
+                            }
                         },
                         {
                           "type": "text",

@@ -96,8 +96,7 @@ function sendQuickReplies(quickReplies) {
             var quickReply2 = document.getElementById('quickReply2').value;
 
             var data={
-                {
-                    json: {
+                json: {
                       "text": yourBusinessName,
                       "type": "vertical",
                       "elements": [

@@ -97,7 +97,7 @@ function sendQuickReplies(quickReplies) {
 
             var data={
                 json: {
-                      "text": yourBusinessName,
+                      "text": "Please select time slot for preferred date:",
                       "type": "vertical",
                       "elements": [
                         {

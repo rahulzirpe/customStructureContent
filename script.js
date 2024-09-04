@@ -100,13 +100,12 @@ function sendQuickReplies(quickReplies) {
 
         // Format the date
         const formattedDate = `${monthNames[date.getMonth()]} ${day}, ${year}`;
+	console.log("formatted Date : "+formattedDate);
 
         if (numQuickReplies == "2") {
             var cmdName = lpTag.agentSDK.cmdNames.writeSC;
-           //const preferredDateInput = document.getElementById('preferredDate').value;
-            //const [year, day, month] = preferredDateInput.split('-');
-            //const preferredDate = `${month}-${day}-${year}`
-            var quickReply1 = document.getElementById('quickReply1').value;
+            
+	    var quickReply1 = document.getElementById('quickReply1').value;
             var quickReply2 = document.getElementById('quickReply2').value;
             var text1=`Please select Preferrable Time Slot for ${formattedDate}`
 
@@ -146,135 +145,7 @@ function sendQuickReplies(quickReplies) {
 
                     ]
             }};
-
-            /*var data = {
-        	json:{
-	        "type": "button",
-	        "title": quickReply1,
-	        "click": {
-	"metadata": [
-		{
-			"type": "ExternalId",
-			"id": "someID"
-		}
-	],
-	"actions": [
-		{
-			"type": "publishText",
-			"text": quickReply1
-		}
-	]
-},
-	"tooltip": quickReply1,
-	"rtl": true
-}};*/
-            /*var data = {
-      json: {
-        "type": "text",
-        "text": "product name",
-        "tooltip": "text tooltip",
-        "style": {
-          "bold": true,
-          "size": "large"
-        }
-      },
-      quickReplies: {
-        "type": "quickReplies",
-        "itemsPerRow": 3,
-        "replies": [
-          {
-            "type": "button",
-            "tooltip": "yes I do",
-            "title": "yes",
-            "click": {
-              "actions": [
-                {
-                  "type": "publishText",
-                  "text": "yep"
-                }
-              ],
-              "metadata": [
-                {
-                  "type": "ExternalId",
-                  "id": "Yes-1234"
-                }
-              ]
-            }
-          },
-          {
-            "type": "button",
-            "tooltip": "No!",
-            "title": "No!",
-            "click": {
-              "actions": [
-                {
-                  "type": "publishText",
-                  "text": "No!"
-                }
-              ],
-              "metadata": [
-                {
-                  "type": "ExternalId",
-                  "id": "No-4321"
-                }
-              ]
-            }
-          }
-        ]
-      },
-      metadata: [	//metadata is optional
-        {"type": "ExternalId", "id": "running364"},
-        {"type": "ExternalId", "id": "soccer486"}
-      ]
-    };*/
-            /*var data = {
-                text: "Please select any timeslot:",
-                quickReplies: {
-                    "type": "quickReplies",
-                    "itemsPerRow": 3,
-                    "replies": [
-                        {
-                            "type": "button",
-                            "tooltip": quickReply1,
-                            "title": quickReply1,
-                            "click": {
-                                "actions": [
-                                    {
-                                        "type": "publishText",
-                                        "text": quickReply1
-                                    }
-                                ],
-                                "metadata": [
-                                    {
-                                        "type": "ExternalId",
-                                        "id": "Yes-1234"
-                                    }
-                                ]
-                            }
-                        },
-                        {
-                            "type": "button",
-                            "tooltip": quickReply2,
-                            "title": quickReply2,
-                            "click": {
-                                "actions": [
-                                    {
-                                        "type": "publishText",
-                                        "text": quickReply2
-                                    }
-                                ],
-                                "metadata": [
-                                    {
-                                        "type": "ExternalId",
-                                        "id": "No-4321"
-                                    }
-                                ]
-                            }
-                        }
-                    ]
-                }
-            };*/
-            lpTag.agentSDK.command(cmdName, data, notifyWhenDone);
+           lpTag.agentSDK.command(cmdName, data, notifyWhenDone);
         }
 
         if (numQuickReplies == "3") {
@@ -565,7 +436,7 @@ function sendQuickReplies(quickReplies) {
         //lpTag.agentSDK.command(cmdName, data, notifyWhenDone);
 
 
-        alert('Quick replies sent successfully!');
+        //alert('Quick replies sent successfully!');
     } catch (error) {
         console.error('Error sending quick replies:', error);
         alert('Error sending quick replies.');

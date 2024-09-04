@@ -153,7 +153,7 @@ function sendQuickReplies(quickReplies) {
         }
 
         if (numQuickReplies == "3") {
-            var cmdName = lpTag.agentSDK.cmdNames.write;
+            var cmdName = lpTag.agentSDK.cmdNames.writeSC;
             var quickReply1 = document.getElementById('quickReply1').value;
             var quickReply2 = document.getElementById('quickReply2').value;
             var quickReply3 = document.getElementById('quickReply3').value;
@@ -212,7 +212,7 @@ function sendQuickReplies(quickReplies) {
         }
 
         if (numQuickReplies == "4") {
-            var cmdName = lpTag.agentSDK.cmdNames.write;
+            var cmdName = lpTag.agentSDK.cmdNames.writeSC;
             var quickReply1 = document.getElementById('quickReply1').value;
             var quickReply2 = document.getElementById('quickReply2').value;
             var quickReply3 = document.getElementById('quickReply3').value;
@@ -286,7 +286,7 @@ function sendQuickReplies(quickReplies) {
         }
 
         if (numQuickReplies == "5") {
-            var cmdName = lpTag.agentSDK.cmdNames.write;
+            var cmdName = lpTag.agentSDK.cmdNames.writeSC;
             var quickReply1 = document.getElementById('quickReply1').value;
             var quickReply2 = document.getElementById('quickReply2').value;
             var quickReply3 = document.getElementById('quickReply3').value;

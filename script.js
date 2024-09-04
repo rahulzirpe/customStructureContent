@@ -42,7 +42,7 @@ document.getElementById('generateButton').addEventListener('click', function () 
         const input = document.createElement('input');
         input.type = 'text';
         input.id = `quickReply${i}`;
-        input.placeholder = `Enter Quick Reply ${i}`;
+        input.placeholder = `Enter Option ${i}`;
         quickRepliesContainer.appendChild(input);
     }
 	

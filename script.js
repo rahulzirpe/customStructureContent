@@ -96,6 +96,27 @@ function sendQuickReplies(quickReplies) {
             var quickReply2 = document.getElementById('quickReply2').value;
 
             var data = {
+               json: {
+	        "type": "button",
+	        "title": "Push Me!",
+	        "click": {
+	"metadata": [
+		{
+			"type": "ExternalId",
+			"id": "someID"
+		}
+	],
+	"actions": [
+		{
+			"type": "publishText",
+			"text": "Show Plan"
+		}
+	]
+},
+	"tooltip": "button tooltip",
+	"rtl": true
+}};
+            /*var data = {
       json: {
         "type": "text",
         "text": "product name",
@@ -153,7 +174,7 @@ function sendQuickReplies(quickReplies) {
         {"type": "ExternalId", "id": "running364"},
         {"type": "ExternalId", "id": "soccer486"}
       ]
-    };
+    };*/
             /*var data = {
                 text: "Please select any timeslot:",
                 quickReplies: {

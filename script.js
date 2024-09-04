@@ -90,14 +90,25 @@ function sendQuickReplies(quickReplies) {
         // var quickReply4 = document.getElementById('quickReply4').value;
         // var quickReply5 = document.getElementById('quickReply5').value;
 
+        const preferredDateInput = document.getElementById('preferredDate').value;
+        const [day, month, year] = preferredDateInput.split('-');
+
+        const date = new Date(`${year}-${month}-${day}`);
+
+        // Array of month names
+        const monthNames = ["January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December"];
+
+        // Format the date
+        const formattedDate = `${monthNames[date.getMonth()]} ${day}, ${year}`;
+
         if (numQuickReplies == "2") {
             var cmdName = lpTag.agentSDK.cmdNames.writeSC;
-            const preferredDateInput = document.getElementById('preferredDate').value;
-            const [year, day, month] = preferredDateInput.split('-');
-            const preferredDate = `${month}-${day}-${year}`
+           //const preferredDateInput = document.getElementById('preferredDate').value;
+            //const [year, day, month] = preferredDateInput.split('-');
+            //const preferredDate = `${month}-${day}-${year}`
             var quickReply1 = document.getElementById('quickReply1').value;
             var quickReply2 = document.getElementById('quickReply2').value;
-            var text1=`Please select Preferrable Time Slot for ${preferredDate}`
+            var text1=`Please select Preferrable Time Slot for ${formattedDate}`
 
             var data = {
                 json:{
@@ -115,7 +126,7 @@ function sendQuickReplies(quickReplies) {
                           "actions": [
                             {
                               "type": "publishText",
-                              "text": `${quickReply1} ${preferredDate}`
+                              "text": `${quickReply1} ${formattedDate}`
                             }
                           ]
                         }
@@ -127,7 +138,7 @@ function sendQuickReplies(quickReplies) {
                           "actions": [
                             {
                               "type": "publishText",
-                              "text": `${quickReply2} ${preferredDate}`
+                              "text": `${quickReply2} ${formattedDate}`
                             }
                           ]
                         }

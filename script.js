@@ -27,10 +27,6 @@ document.getElementById('preferredDate').min = today.toISOString().split('T')[0]
 document.getElementById('preferredDate').max = maxDate.toISOString().split('T')[0];
 
 document.getElementById('generateButton').addEventListener('click', function () {
-
-	if (!preferredDateInput) {
-   		 alert("Please enter a preferred date.");
-	} else{
     const numQuickReplies = document.getElementById('numQuickReplies').value;
     const quickRepliesContainer = document.getElementById('quickRepliesContainer');
     quickRepliesContainer.innerHTML = ''; // Clear previous inputs
@@ -49,7 +45,7 @@ document.getElementById('generateButton').addEventListener('click', function () 
         input.placeholder = `Enter Quick Reply ${i}`;
         quickRepliesContainer.appendChild(input);
     }
-	}
+	
     document.getElementById('sendButton').style.display = 'block';
 });
 
@@ -113,8 +109,7 @@ function sendQuickReplies(quickReplies) {
 
         if (numQuickReplies == "2") {
             var cmdName = lpTag.agentSDK.cmdNames.writeSC;
-            
-	    var quickReply1 = document.getElementById('quickReply1').value;
+            var quickReply1 = document.getElementById('quickReply1').value;
             var quickReply2 = document.getElementById('quickReply2').value;
             var text1=`Please select Preferrable Time Slot for ${formattedDate}`
 

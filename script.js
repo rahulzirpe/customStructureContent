@@ -95,7 +95,45 @@ function sendQuickReplies(quickReplies) {
             var quickReply1 = document.getElementById('quickReply1').value;
             var quickReply2 = document.getElementById('quickReply2').value;
 
-            var data = {
+
+	var data = {
+                json:{
+                    "type": "vertical",
+                    "tag": "generic",
+                    "elements": [{
+                        "type": "text",
+                        "text": "Please select Preferrable Time Slot",
+                        "tag": "title"
+                      },
+                      {
+                        "type": "button",
+                        "title": "Retry same address",
+                        "click": {
+                          "actions": [
+                            {
+                              "type": "publishText",
+                              "text": "Retry same address"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "button",
+                        "title": "Pickup point",
+                        "click": {
+                          "actions": [
+                            {
+                              "type": "publishText",
+                              "text": "Pickup point"
+                            }
+                          ]
+                        }
+                      }
+
+                    ]
+            }};
+
+            /*var data = {
         	json:{
 	        "type": "button",
 	        "title": quickReply1,
@@ -115,7 +153,7 @@ function sendQuickReplies(quickReplies) {
 },
 	"tooltip": quickReply1,
 	"rtl": true
-}};
+}};*/
             /*var data = {
       json: {
         "type": "text",

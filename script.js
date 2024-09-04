@@ -148,7 +148,7 @@ function sendQuickReplies(quickReplies) {
                       }
 
                     ]
-            };
+            }};
            lpTag.agentSDK.command(cmdName, data, notifyWhenDone);
         }
 

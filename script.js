@@ -92,39 +92,42 @@ function sendQuickReplies(quickReplies) {
 
         if (numQuickReplies == "2") {
             var cmdName = lpTag.agentSDK.cmdNames.writeSC;
+            const preferredDateInput = document.getElementById('preferredDate').value;
+            const [year, day, month] = preferredDateInput.split('-');
+            const preferredDate = `${month}-${day}-${year}`
             var quickReply1 = document.getElementById('quickReply1').value;
             var quickReply2 = document.getElementById('quickReply2').value;
+            var text1=`Please select Preferrable Time Slot for ${preferredDate}`
 
-
-	var data = {
+            var data = {
                 json:{
                     "type": "vertical",
                     "tag": "generic",
                     "elements": [{
                         "type": "text",
-                        "text": "Please select Preferrable Time Slot",
+                        "text": text1,
                         "tag": "title"
                       },
                       {
                         "type": "button",
-                        "title": "Retry same address",
+                        "title": quickReply1,
                         "click": {
                           "actions": [
                             {
                               "type": "publishText",
-                              "text": "Retry same address"
+                              "text": `${quickReply1} ${preferredDate}`
                             }
                           ]
                         }
                       },
                       {
                         "type": "button",
-                        "title": "Pickup point",
+                        "title": quickReply2,
                         "click": {
                           "actions": [
                             {
                               "type": "publishText",
-                              "text": "Pickup point"
+                              "text": `${quickReply2} ${preferredDate}`
                             }
                           ]
                         }

@@ -95,35 +95,65 @@ function sendQuickReplies(quickReplies) {
             var quickReply1 = document.getElementById('quickReply1').value;
             var quickReply2 = document.getElementById('quickReply2').value;
 
-            var data={
-                json: {
-                      "text": "Please select time slot for preferred date:",
-                      "type": "vertical",
-                      "elements": [
-                        {
-                            "type": "button",
-                            "title": "Test Button",
-                            "click": {
-                              "actions": [
-                                {
-                                  "type": "publishText",
-                                  "text": "Button 1 was clicked"
-                                }
-                              ]
-                            }
-                        },
-                        {
-                          "type": "text",
-                          "text": "1234 Hollywood Boulevard, Los Angeles, CA"
-                        },
-                      ],
-                      "metadata": { "fallback": "xyz" }
-                    },
-                    metadata: [	//metadata is optional
-                              {"type":"ExternalId","id":"running364"},
-                              {"type":"ExternalId","id":"soccer486"}
-                          ]
-                  };
+            var data = {
+      json: {
+        "type": "text",
+        "text": "product name",
+        "tooltip": "text tooltip",
+        "style": {
+          "bold": true,
+          "size": "large"
+        }
+      },
+      quickReplies: {
+        "type": "quickReplies",
+        "itemsPerRow": 3,
+        "replies": [
+          {
+            "type": "button",
+            "tooltip": "yes I do",
+            "title": "yes",
+            "click": {
+              "actions": [
+                {
+                  "type": "publishText",
+                  "text": "yep"
+                }
+              ],
+              "metadata": [
+                {
+                  "type": "ExternalId",
+                  "id": "Yes-1234"
+                }
+              ]
+            }
+          },
+          {
+            "type": "button",
+            "tooltip": "No!",
+            "title": "No!",
+            "click": {
+              "actions": [
+                {
+                  "type": "publishText",
+                  "text": "No!"
+                }
+              ],
+              "metadata": [
+                {
+                  "type": "ExternalId",
+                  "id": "No-4321"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      metadata: [	//metadata is optional
+        {"type": "ExternalId", "id": "running364"},
+        {"type": "ExternalId", "id": "soccer486"}
+      ]
+    };
             /*var data = {
                 text: "Please select any timeslot:",
                 quickReplies: {

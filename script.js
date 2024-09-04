@@ -433,11 +433,7 @@ function sendQuickReplies(quickReplies) {
             lpTag.agentSDK.command(cmdName, data, notifyWhenDone);
         }
 
-        //lpTag.agentSDK.command(cmdName, data, notifyWhenDone);
-
-
-        //alert('Quick replies sent successfully!');
-    } catch (error) {
+	} catch (error) {
         console.error('Error sending quick replies:', error);
         alert('Error sending quick replies.');
     }

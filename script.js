@@ -109,7 +109,7 @@ function sendQuickReplies(quickReplies) {
     const formattedDate = `${dayNames[date.getDay()]}, ${monthNames[date.getMonth()]} ${day}`;
 
     console.log(formattedDate); // Output: "Thursday, June 4" (assuming input is "04-06-2024")
-}
+
 
         if (numQuickReplies == "2") {
             var cmdName = lpTag.agentSDK.cmdNames.writeSC;

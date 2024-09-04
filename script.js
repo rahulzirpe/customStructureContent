@@ -91,16 +91,24 @@ function sendQuickReplies(quickReplies) {
         // var quickReply5 = document.getElementById('quickReply5').value;
 
         const preferredDateInput = document.getElementById('preferredDate').value;
-        const [day, month, year] = preferredDateInput.split('-');
 
-        const date = new Date(`${year}-${month}-${day}`);
+	if (!preferredDateInput) {
+   		 alert("Please enter a preferred date.");
+	} else {
+    	const [day, month, year] = preferredDateInput.split('-');
 
-        // Array of month names
-        const monthNames = ["January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December"];
+    	// Create a Date object
+   	 const date = new Date(`${year}-${month}-${day}`);
 
-        // Format the date
-        const formattedDate = `${monthNames[date.getMonth()]} ${day}, ${year}`;
-	console.log("formatted Date : "+formattedDate);
+    // Array of day and month names
+    const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const monthNames = ["January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December"];
+
+    // Format the date
+    const formattedDate = `${dayNames[date.getDay()]}, ${monthNames[date.getMonth()]} ${day}`;
+
+    console.log(formattedDate); // Output: "Thursday, June 4" (assuming input is "04-06-2024")
+}
 
         if (numQuickReplies == "2") {
             var cmdName = lpTag.agentSDK.cmdNames.writeSC;

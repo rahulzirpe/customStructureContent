@@ -95,20 +95,10 @@ function sendQuickReplies(quickReplies) {
             var quickReply1 = document.getElementById('quickReply1').value;
             var quickReply2 = document.getElementById('quickReply2').value;
 
-            var data = var data = {
-               json: {
-                "type": "text",
-                "text": "product name",
-                "tooltip": "text tooltip",
-                "style": {
-                  "bold": true,
-                  "size": "large"
-                }
-              },
-               
-               json:{
+            var data = {
+        	json:{
 	        "type": "button",
-	        "title": "Push Me!",
+	        "title": quickReply1,
 	        "click": {
 	"metadata": [
 		{
@@ -119,11 +109,11 @@ function sendQuickReplies(quickReplies) {
 	"actions": [
 		{
 			"type": "publishText",
-			"text": "Show Plan"
+			"text": quickReply1
 		}
 	]
 },
-	"tooltip": "button tooltip",
+	"tooltip": quickReply1,
 	"rtl": true
 }};
             /*var data = {

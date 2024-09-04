@@ -95,8 +95,18 @@ function sendQuickReplies(quickReplies) {
             var quickReply1 = document.getElementById('quickReply1').value;
             var quickReply2 = document.getElementById('quickReply2').value;
 
-            var data = {
+            var data = var data = {
                json: {
+                "type": "text",
+                "text": "product name",
+                "tooltip": "text tooltip",
+                "style": {
+                  "bold": true,
+                  "size": "large"
+                }
+              },
+               
+               json:{
 	        "type": "button",
 	        "title": "Push Me!",
 	        "click": {

@@ -90,25 +90,35 @@ function sendQuickReplies(quickReplies) {
         // var quickReply4 = document.getElementById('quickReply4').value;
         // var quickReply5 = document.getElementById('quickReply5').value;
 
-        const preferredDateInput = document.getElementById('preferredDate').value;
-	console.log("preferredDateInput : "+preferredDateInput);
+	const preferredDateInput = document.getElementById('preferredDate').value;
+console.log("preferredDateInput : " + preferredDateInput);
 
-	const [year, month, day] = preferredDateInput.split('-');
+if (preferredDateInput) {
+    // Split the date input assuming it's in the format "yyyy-mm-dd"
+    const [year, month, day] = preferredDateInput.split('-');
 
-    	// Create a Date object
-   	 const date = new Date(`${year}-${day}-${month}`);
-	 console.log("Date : "+date);
+    // Create a Date object (subtract 1 from month because months are 0-indexed in JavaScript)
+    const date = new Date(year, month - 1, day);
+    console.log("Date : " + date);
 
-    // Array of day and month names
-    const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    const monthNames = ["January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December"];
+    // Check if the date is valid
+    if (!isNaN(date.getTime())) {
+        // Array of day and month names
+        const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-    // Format the date
-    const formattedDate = `${dayNames[date.getDay()]}, ${monthNames[date.getMonth()]} ${day}`;
+        // Format the date as "Day, Month Day" (e.g., "Thursday, September 4")
+        const formattedDate = `${dayNames[date.getDay()]}, ${monthNames[date.getMonth()]} ${day}`;
 
-    console.log("formattedDate :"+formattedDate); // Output: "Thursday, June 4" (assuming input is "04-06-2024")
+        console.log("formattedDate :" + formattedDate); // Example: "Thursday, September 4"
+    } else {
+        alert("Invalid date. Please enter a valid date.");
+    }
+} else {
+    alert("Please enter a preferred date.");
+}
 
-
+	    
         if (numQuickReplies == "2") {
             var cmdName = lpTag.agentSDK.cmdNames.writeSC;
             var quickReply1 = document.getElementById('quickReply1').value;

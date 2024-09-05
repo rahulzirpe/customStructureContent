@@ -93,10 +93,10 @@ function sendQuickReplies(quickReplies) {
         const preferredDateInput = document.getElementById('preferredDate').value;
 	console.log("preferredDateInput : "+preferredDateInput);
 
-	const [day, month, year] = preferredDateInput.split('-');
+	const [month, day, year] = preferredDateInput.split('-');
 
     	// Create a Date object
-   	 const date = new Date(`${year}-${day}-${month}`);
+   	 const date = new Date(`${year}-${month}-${day}`);
 	 console.log("Date : "+date);
 
     // Array of day and month names

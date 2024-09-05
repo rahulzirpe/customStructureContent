@@ -91,11 +91,13 @@ function sendQuickReplies(quickReplies) {
         // var quickReply5 = document.getElementById('quickReply5').value;
 
         const preferredDateInput = document.getElementById('preferredDate').value;
+	console.log("preferredDateInput : "+preferredDateInput);
 
 	const [day, month, year] = preferredDateInput.split('-');
 
     	// Create a Date object
    	 const date = new Date(`${year}-${month}-${day}`);
+	 console.log("Date : "+date);
 
     // Array of day and month names
     const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -104,7 +106,7 @@ function sendQuickReplies(quickReplies) {
     // Format the date
     const formattedDate = `${dayNames[date.getDay()]}, ${monthNames[date.getMonth()]} ${day}`;
 
-    console.log(formattedDate); // Output: "Thursday, June 4" (assuming input is "04-06-2024")
+    console.log("formattedDate :"formattedDate); // Output: "Thursday, June 4" (assuming input is "04-06-2024")
 
 
         if (numQuickReplies == "2") {

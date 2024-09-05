@@ -106,7 +106,7 @@ function sendQuickReplies(quickReplies) {
     // Format the date
     const formattedDate = `${dayNames[date.getDay()]}, ${monthNames[date.getMonth()]} ${day}`;
 
-    console.log("formattedDate :"formattedDate); // Output: "Thursday, June 4" (assuming input is "04-06-2024")
+    console.log("formattedDate :"+formattedDate); // Output: "Thursday, June 4" (assuming input is "04-06-2024")
 
 
         if (numQuickReplies == "2") {

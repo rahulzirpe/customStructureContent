@@ -96,7 +96,7 @@ function sendQuickReplies(quickReplies) {
 	const [day, month, year] = preferredDateInput.split('-');
 
     	// Create a Date object
-   	 const date = new Date(`${year}-${month}-${day}`);
+   	 const date = new Date(`${year}-${day}-${month}`);
 	 console.log("Date : "+date);
 
     // Array of day and month names

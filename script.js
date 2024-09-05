@@ -108,7 +108,7 @@ if (preferredDateInput) {
         const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
         // Format the date as "Day, Month Day" (e.g., "Thursday, September 4")
-        const formattedDate = `${dayNames[date.getDay()]}, ${monthNames[date.getMonth()]} ${day}`;
+        var formattedDate = `${dayNames[date.getDay()]}, ${monthNames[date.getMonth()]} ${day}`;
 
         console.log("formattedDate :" + formattedDate); // Example: "Thursday, September 4"
     } else {
